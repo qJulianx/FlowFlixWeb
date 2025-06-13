@@ -83,7 +83,7 @@ export default function FlowflixDownloadPageClient() {
 
       <header className="w-full max-w-4xl mb-12 text-center z-10">
         <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-extrabold">
-          FlowFlixx
+          Flowflix
         </h1>
         <p className="text-slate-400 mt-2">Twoja ulubiona platforma streamingowa.</p>
         <div className="flex justify-center gap-3 mt-4">
@@ -101,11 +101,11 @@ export default function FlowflixDownloadPageClient() {
       <main className="w-full max-w-4xl space-y-8 z-10">
         <Card className={cardClasses}>
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Odkryj Świat FlowFlix</CardTitle>
+            <CardTitle className="text-2xl text-center">Odkryj Świat Flowflix</CardTitle>
           </CardHeader>
           <CardContent className="text-center text-slate-300 space-y-4">
             <p>
-              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki treści
+              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. Flowflix oferuje dostęp do bogatej biblioteki treści
               na żądanie, zawsze w wysokiej jakości.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-sm">
@@ -127,9 +127,9 @@ export default function FlowflixDownloadPageClient() {
 
         <Card className={cardClasses}>
           <CardHeader>
-            <CardTitle className="text-3xl text-center">Pobierz Aplikację FlowFlix</CardTitle>
+            <CardTitle className="text-3xl text-center">Pobierz Aplikację Flowflix</CardTitle>
             <CardDescription className="text-center text-slate-400">
-              Przejdź do strony pobierania, aby pobrać najnowszą, darmową wersję aplikacji FlowFlix na swoje urządzenie
+              Przejdź do strony pobierania, aby pobrać najnowszą, darmową wersję aplikacji Flowflix na swoje urządzenie
               z systemem Android.
             </CardDescription>
           </CardHeader>
@@ -190,7 +190,7 @@ export default function FlowflixDownloadPageClient() {
             <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
               <div className="space-y-4">
                 {[
-                  "Po zainstalowaniu, otwórz aplikację FlowFlix.",
+                  "Po zainstalowaniu, otwórz aplikację Flowflix.",
                   "Zaloguj się na swoje konto lub utwórz nowe, jeśli go jeszcze nie posiadasz.",
                   "Przeglądaj bibliotekę filmów i seriali.",
                   "Wybierz interesujący Cię tytuł i rozpocznij oglądanie.",
