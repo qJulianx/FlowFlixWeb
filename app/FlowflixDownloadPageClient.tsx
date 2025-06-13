@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-// ... inne importy
-import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
+"use client";
+
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+
 
 const GITHUB_RELEASES_API = "https://api.github.com/repos/FlowFlix/FlowFlix_Early_Alpha/releases/latest"
 
