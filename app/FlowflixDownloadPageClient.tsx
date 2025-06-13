@@ -83,7 +83,7 @@ export default function FlowflixDownloadPageClient() {
 
       <header className="w-full max-w-4xl mb-12 text-center z-10">
         <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-extrabold">
-          FlowFlixxx
+          FlowFlixx
         </h1>
         <p className="text-slate-400 mt-2">Twoja ulubiona platforma streamingowa.</p>
         <div className="flex justify-center gap-3 mt-4">
