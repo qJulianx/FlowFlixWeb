@@ -177,6 +177,7 @@ export default function FlowflixDownloadPageClient() {
               <div className="space-y-4">
                 {[
                   "Po przejściu na stronę GitHub, pobierz plik APK z najnowszego wydania.",
+                  "Jesli masz problem z GitHub to kliknij pobierz.",
                   "Przejdź do ustawień swojego telefonu.",
                   "Znajdź sekcję Bezpieczeństwo lub Aplikacje.",
                   'Zezwól na instalację aplikacji z "Nieznanych źródeł" (opcja może się różnić w zależności od modelu telefonu).',
@@ -206,7 +207,8 @@ export default function FlowflixDownloadPageClient() {
               <div className="space-y-4">
                 {[
                   "Po zainstalowaniu, otwórz aplikację FlowFlix.",
-                  "Zaloguj się na swoje konto lub utwórz nowe, jeśli go jeszcze nie posiadasz.",
+                  "Zaloguj się na swoje konto lub utwórz nowe, jeśli jeszcze nie chcesz użyj Kontynuj jako gość.",
+                  "Aby utworzyć konto wejdź na https://filman.cc/rejestracja.",
                   "Przeglądaj bibliotekę filmów i seriali.",
                   "Wybierz interesujący Cię tytuł i rozpocznij oglądanie.",
                   "Ciesz się nieograniczonym dostępem do rozrywki!",
