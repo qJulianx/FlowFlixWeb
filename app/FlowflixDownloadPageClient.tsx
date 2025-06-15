@@ -106,7 +106,7 @@ export default function FlowflixDownloadPageClient() {
           <CardContent className="text-center text-slate-300 space-y-4">
             <p>
               Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki po
-              polsku,       zawsze w wysokiej jakości.
+              polsku i nie tylko, zawsze w wysokiej jakości.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-sm">
               <div className="flex flex-col items-center">
