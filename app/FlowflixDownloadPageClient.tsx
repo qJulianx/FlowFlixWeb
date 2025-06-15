@@ -207,7 +207,7 @@ export default function FlowflixDownloadPageClient() {
               <div className="space-y-4">
                 {[
                   "Po zainstalowaniu, otwórz aplikację FlowFlix.",
-                  "Zaloguj się na swoje konto lub utwórz nowe, jeśli jeszcze nie chcesz użyj Kontynuj jako gość.",
+                  "Zaloguj się na swoje konto lub utwórz nowe, jeśli nie chcesz użyj Kontynuj jako gość.",
                   "Aby utworzyć konto wejdź na https://filman.cc/rejestracja",
                   "Przeglądaj bibliotekę filmów i seriali.",
                   "Wybierz interesujący Cię tytuł i rozpocznij oglądanie.",
