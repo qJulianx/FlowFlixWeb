@@ -23,12 +23,7 @@ import {
   Shield,
   Heart,
 } from "lucide-react"
-import {
-  getLatestReleaseChangelog,
-  getLatestApkDownloadUrl,
-  type ChangelogInfo
-} from "./actions"
-import { Download, Loader2 } from "lucide-react"
+import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
 const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/latest"
 
@@ -45,17 +40,6 @@ export default function FlowflixDownloadPageClient() {
     }
     fetchChangelog()
   }, [])
-  
-  const [apkUrl, setApkUrl] = useState<string | null>(null)
-
-useEffect(() => {
-  async function fetchApkUrl() {
-    const url = await getLatestApkDownloadUrl()
-    setApkUrl(url)
-  }
-  fetchApkUrl()
-}, [])
-
 
   const formatDate = (dateString: string) => {
     if (!dateString) return ""
@@ -121,8 +105,8 @@ useEffect(() => {
           </CardHeader>
           <CardContent className="text-center text-slate-300 space-y-4">
             <p>
-              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki treści
-              na żądanie, zawsze w wysokiej jakości.
+              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki po
+              polsku i nie tylko, zawsze w wysokiej jakości.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-sm">
               <div className="flex flex-col items-center">
@@ -155,23 +139,12 @@ useEffect(() => {
               className="w-full max-w-xs bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-150 ease-in-out hover:scale-105"
               size="lg"
             >
-              <a href={apkUrl ?? GITHUB_RELEASES_URL} target="_blank" rel="noopener noreferrer">
-                {apkUrl ? (
-  <>
-    <Download className="mr-2 h-5 w-5" />
-    Pobierz APK
-  </>
-) : (
-  <>
-    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-    Ładowanie...
-  </>
-)}
+              <a href={GITHUB_RELEASES_URL} target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" />
+                Przejdź do strony pobierania
               </a>
             </Button>
-            <p className="text-sm text-slate-500 pt-2">
-  {apkUrl ? "Kliknij, aby pobrać najnowszy plik APK aplikacji FlowFlix." : "Trwa pobieranie informacji o wersji..."}
-</p>
+            <p className="text-sm text-slate-500 pt-2">Zostaniesz przekierowany na stronę GitHub.</p>
           </CardContent>
         </Card>
 
