@@ -2,8 +2,19 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import {
   Download,
@@ -25,11 +36,10 @@ import {
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
-const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/latest"
-
 export default function FlowflixDownloadPageClient() {
   const [changelogData, setChangelogData] = useState<ChangelogInfo | null>(null)
   const [isLoadingChangelog, setIsLoadingChangelog] = useState(true)
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
 
   useEffect(() => {
     async function fetchChangelog() {
@@ -37,7 +47,13 @@ export default function FlowflixDownloadPageClient() {
       const data = await getLatestReleaseChangelog()
       setChangelogData(data)
       setIsLoadingChangelog(false)
+
+      if (data && data.version && !data.error) {
+        const directDownloadUrl = `https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/${data.version}/app-release.apk`
+        setDownloadUrl(directDownloadUrl)
+      }
     }
+
     fetchChangelog()
   }, [])
 
@@ -105,8 +121,8 @@ export default function FlowflixDownloadPageClient() {
           </CardHeader>
           <CardContent className="text-center text-slate-300 space-y-4">
             <p>
-              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki po
-              polsku i nie tylko, zawsze w wysokiej jakości.
+              Oglądaj tysiące filmów i seriali gdziekolwiek jesteś. FlowFlix oferuje dostęp do bogatej biblioteki treści
+              na żądanie, zawsze w wysokiej jakości.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-sm">
               <div className="flex flex-col items-center">
@@ -139,7 +155,7 @@ export default function FlowflixDownloadPageClient() {
               className="w-full max-w-xs bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-150 ease-in-out hover:scale-105"
               size="lg"
             >
-              <a href={GITHUB_RELEASES_URL} target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
                 Przejdź do strony pobierania
               </a>
