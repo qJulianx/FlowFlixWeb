@@ -12,6 +12,9 @@ import {
   Film,
   Users,
   Github,
+  Twitter,
+  Facebook,
+  Instagram,
   Loader2,
   AlertCircle,
   BadgeDollarSign,
@@ -21,35 +24,6 @@ import {
   Heart,
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
-
-// Dodany komponent Footer
-function Footer() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null)
-
-  useEffect(() => {
-    const year = new Date().getFullYear()
-    setCurrentYear(year)
-  }, [])
-
-  return (
-    <footer className="p-4 flex justify-center items-center text-xs text-muted-foreground">
-      <p className="flex items-center gap-1">
-        <span>©</span>
-        <span>{currentYear}</span>
-        <span className="hidden sm:inline">FlowFlix. All rights reserved.</span>
-      </p>
-      <a
-        href="https://github.com/FlowFlix/FlowFlix_Early_Alpha"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="FlowFlix on GitHub"
-        className="ml-4"
-      >
-        <Github className="w-5 h-5 hover:text-gray-400 transition-colors" />
-      </a>
-    </footer>
-  )
-}
 
 const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/latest"
 
@@ -349,7 +323,7 @@ export default function FlowflixDownloadPageClient() {
         <div className="flex justify-center space-x-8 mb-8">
           {[
             { icon: Github, label: "Github", color: "hover:text-purple-400" },
-            { icon: TikTok, label: "TikTok", color: "hover:text-blue-400" },
+            { icon: Twitter, label: "Twitter", color: "hover:text-blue-400" },
             { icon: Facebook, label: "Facebook", color: "hover:text-blue-600" },
             { icon: Instagram, label: "Instagram", color: "hover:text-pink-400" },
           ].map(({ icon: Icon, label, color }) => (
