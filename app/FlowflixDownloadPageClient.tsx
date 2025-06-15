@@ -126,27 +126,32 @@ export default function FlowflixDownloadPageClient() {
         </Card>
 
         <Card className={cardClasses}>
-          <CardHeader>
-            <CardTitle className="text-3xl text-center">Pobierz Aplikację FlowFlix</CardTitle>
-            <CardDescription className="text-center text-slate-400">
-              Przejdź do strony pobierania, aby pobrać najnowszą, darmową wersję aplikacji FlowFlix na swoje urządzenie
-              z systemem Android.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center space-y-4">
-            <Button
-              asChild
-              className="w-full max-w-xs bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-150 ease-in-out hover:scale-105"
-              size="lg"
-            >
-              <a href={GITHUB_RELEASES_URL} target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-5 w-5" />
-                Przejdź do strony pobierania
-              </a>
-            </Button>
-            <p className="text-sm text-slate-500 pt-2">Zostaniesz przekierowany na stronę GitHub.</p>
-          </CardContent>
-        </Card>
+  <CardHeader>
+    <CardTitle className="text-3xl text-center">Pobierz Aplikację FlowFlix</CardTitle>
+    <CardDescription className="text-center text-slate-400">
+      Przejdź do strony pobierania, aby pobrać najnowszą, darmową wersję aplikacji FlowFlix na swoje urządzenie
+      z systemem Android.
+    </CardDescription>
+  </CardHeader>
+  <CardContent className="flex flex-col items-center space-y-4">
+    <Button
+      asChild
+      className="w-full max-w-xs bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-150 ease-in-out hover:scale-105"
+      size="lg"
+    >
+      <a
+        href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.4/app-release.apk"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center space-x-2"
+      >
+        <Download className="h-5 w-5" />
+        <span>Pobierz</span>
+      </a>
+    </Button>
+    <p className="text-sm text-slate-500 pt-2">Zostaniesz przekierowany na stronę GitHub, lub pobierz</p>
+  </CardContent>
+</Card>
 
         <Accordion type="single" collapsible className="w-full text-slate-300">
           <AccordionItem value="installation" className={accordionItemClasses}>
