@@ -40,7 +40,7 @@ export async function getLatestReleaseChangelog(): Promise<ChangelogInfo> {
         Accept: "application/vnd.github.v3+json",
       },
       next: {
-        revalidate: 3600, // Cache na 1 godzinę
+        revalidate: 900, // Cache na 15 min
       },
     })
 
