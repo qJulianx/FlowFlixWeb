@@ -242,7 +242,7 @@ export default function FlowflixDownloadPageClient() {
         <li>Nie odpowiadamy za treści (filmy/seriale) – aplikacja ich nie hostuje.</li>
         <li>Aplikacja jest <strong>open-source</strong> dostępna na GitHub.</li>
         <li>
-        Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się, jest dlatego tak bo aplikacja nie jest w Sklep Play.
+        Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się, jest tak dlatego bo aplikacja nie jest w Sklep Play.
         Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
         </li>
         <li>
