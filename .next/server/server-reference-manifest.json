@@ -1,9 +1,9 @@
 {
   "node": {
-    "00757c763b8e95c6d4903a3526468320241958deb6": {
+    "006c925ab8c6cd8b3d9feb1d13dd574869cecaa6bd": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2FFlowFlixWeb%2Fapp%2Factions.ts%22%2C%5B%7B%22id%22%3A%2200757c763b8e95c6d4903a3526468320241958deb6%22%2C%22exportedName%22%3A%22getLatestReleaseChangelog%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2FFlowFlixWeb%2Fapp%2Factions.ts%22%2C%5B%7B%22id%22%3A%22006c925ab8c6cd8b3d9feb1d13dd574869cecaa6bd%22%2C%22exportedName%22%3A%22getLatestReleaseChangelog%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -13,5 +13,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "WJ31h159Lz9rNJP6GJ9TRZFqWYE2xZzO+4ZA9wSGKeQ="
+  "encryptionKey": "Oz81ORuop9tVMez5cYOqnyBHg5HKIMY28V7eJLnDqDw="
 }
