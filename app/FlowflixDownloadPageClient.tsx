@@ -236,7 +236,7 @@ export default function FlowflixDownloadPageClient() {
        </AccordionTrigger>
        <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
          <ul className="list-disc list-inside space-y-2">
-        <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści.</li>
+        <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści bez reklam.</li>
         <li>Aby mieć większą bazę filmów, zaloguj się do Filman. Więcej informacji znajdziesz w sekcje Szybki Start</li>
         <li>Nie odpowiadamy za treści (filmy/seriale) – aplikacja ich nie hostuje.</li>
         <li>Aplikacja jest <strong>open-source</strong> dostępna na GitHub.</li>
