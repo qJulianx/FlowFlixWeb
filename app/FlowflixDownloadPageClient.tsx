@@ -279,7 +279,7 @@ export default function FlowflixDownloadPageClient() {
       <img
         src="https://i.imgur.com/s9reE7u.jpeg"
         alt="Ekran główny FlowFlix"
-       className="rounded-xl shadow-lg max-w-[300px] w-full h-auto"
+       className="rounded-xl shadow-lg max-w-[250px] w-full h-auto"
       />
     </div>
   </AccordionContent>
