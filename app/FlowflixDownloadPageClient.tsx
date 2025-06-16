@@ -22,6 +22,7 @@ import {
   Zap,
   Shield,
   Heart,
+  Info,
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
@@ -223,6 +224,38 @@ export default function FlowflixDownloadPageClient() {
               </div>
             </AccordionContent>
           </AccordionItem>
+          <AccordionItem value="info" className={accordionItemClasses}>
+          <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-blue-400 transition-colors">
+            <div className="flex items-center">
+             <div className="p-2 rounded-full bg-blue-500/20 mr-4">
+               <Info className="w-5 h-5 text-blue-400" />
+            </div>
+            Informacje o FlowFlix
+         </div>
+       </AccordionTrigger>
+       <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
+         <ul className="list-disc list-inside space-y-2">
+        <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści.</li>
+        <li><strong>Nie odpowiadamy za treści (filmy/seriale)</strong> – aplikacja ich nie hostuje.</li>
+        <li>Aplikacja jest w pełni <strong>open-source</strong> i dostępna na GitHub.</li>
+        <li>
+        Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się – aplikacja nie jest w sklepie Google Play.
+        Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
+        </li>
+        <li>
+        Jeśli nam nie ufasz, możesz sprawdzić plik na stronie typu <strong>VirusTotal</strong>. Nasz test (v1.4):{" "}
+        <a
+          href="https://shorturl.at/PVbJW"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 underline hover:text-blue-300"
+        >
+          zobacz wynik
+        </a>
+        </li>
+        </ul>
+        </AccordionContent>
+        </AccordionItem>
         </Accordion>
 
         <Card className={cardClasses}>
