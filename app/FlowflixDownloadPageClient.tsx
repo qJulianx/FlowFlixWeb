@@ -185,7 +185,7 @@ export default function FlowflixDownloadPageClient() {
                   'Zezwól na instalację aplikacji z "Nieznanych źródeł" (opcja może się różnić w zależności od modelu telefonu).',
                   'Otwórz pobrany plik APK (zwykle znajduje się w folderze "Pobrane").',
                   "Postępuj zgodnie z instrukcjami na ekranie, aby zakończyć instalację.",
-                  "Jesli masz komunikat z Play Protect znajdziesz w sekcje Informacje o FlowFlix.",
+                  "Jesli masz komunikat z Play Protect zażyj do sekcji Informacje o FlowFlix.",
                 ].map((step, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
