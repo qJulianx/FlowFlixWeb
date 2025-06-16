@@ -53,7 +53,7 @@ export default function FlowflixDownloadPageClient() {
   }
 
   const cardClasses =
-    "bg-slate-900/30 border-slate-700/30 text-slate-50 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900/40"
+    "bg-slate-900/30 border-slate-700/30 text-slate-50 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900/40"
   const accordionItemClasses = `${cardClasses} rounded-xl mb-3`
 
   return (
