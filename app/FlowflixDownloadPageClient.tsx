@@ -151,7 +151,7 @@ export default function FlowflixDownloadPageClient() {
           </a>
         </Button>
         <p className="text-sm text-slate-500 pt-2">
-          Zostaniesz przekierowany na stronę GitHub, lub{' '}
+          Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
             href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.4/app-release.apk"
             target="_blank"
