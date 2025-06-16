@@ -236,14 +236,14 @@ export default function FlowflixDownloadPageClient() {
        <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
          <ul className="list-disc list-inside space-y-2">
         <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści.</li>
-        <li><strong>Nie odpowiadamy za treści (filmy/seriale)</strong> – aplikacja ich nie hostuje.</li>
-        <li>Aplikacja jest w pełni <strong>open-source</strong> i dostępna na GitHub.</li>
+        <li>Nie odpowiadamy za treści (filmy/seriale) – aplikacja ich nie hostuje.</li>
+        <li>Aplikacja jest <strong>open-source</strong> dostępna na GitHub.</li>
         <li>
-        Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się – aplikacja nie jest w sklepie Google Play.
+        Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się, jest dlatego tak bo aplikacja nie jest w sklepie Google Play.
         Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
         </li>
         <li>
-        Jeśli nam nie ufasz, możesz sprawdzić plik na stronie typu <strong>VirusTotal</strong>. Nasz test (v1.4):{" "}
+        Jeśli nam nie ufasz, możesz zrobić test na stronie typu <strong>VirusTotal</strong>. Nasz test wersji (v1.4):{" "}
         <a
           href="https://shorturl.at/PVbJW"
           target="_blank"
