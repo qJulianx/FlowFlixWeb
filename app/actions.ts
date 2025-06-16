@@ -56,7 +56,7 @@ export async function getLatestReleaseChangelog(): Promise<ChangelogInfo> {
               Accept: "application/vnd.github.v3+json",
             },
             next: {
-              revalidate: 3600,
+              revalidate: 900,
             },
           })
 
@@ -96,7 +96,7 @@ export async function getLatestReleaseChangelog(): Promise<ChangelogInfo> {
         version: "Brak informacji",
         title: "Wydania niedostępne",
         description:
-          "Nie udało się pobrać informacji o najnowszym wydaniu. Sprawdź stronę GitHub dla najnowszych aktualizacji.",
+          "Nie udało się pobrać informacji o najnowszym wydaniu. Sprawdź stronę GitHub dla najnowszych aktualizacji lub Spróbuj odświeżyć strone.",
         publishedDate: "",
         error: "Brak dostępnych wydań w repozytorium",
       }
@@ -115,7 +115,7 @@ export async function getLatestReleaseChangelog(): Promise<ChangelogInfo> {
     return {
       version: "Brak informacji",
       title: "Błąd połączenia",
-      description: "Wystąpił problem z połączeniem do GitHub. Spróbuj ponownie później.",
+      description: "Wystąpił problem z połączeniem do GitHub. Spróbuj odświeżyć strone.",
       publishedDate: "",
       error: error instanceof Error ? error.message : "Nieznany błąd",
     }
