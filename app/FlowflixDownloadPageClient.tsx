@@ -270,7 +270,7 @@ export default function FlowflixDownloadPageClient() {
   </AccordionTrigger>
   <AccordionContent className="space-y-4 text-slate-400 px-8 pb-6 text-base leading-relaxed">
     <p>Tak prezentuje się interfejs aplikacji FlowFlix:</p>
-    <div className="flex flex-col space-y-6">
+    <div className="flex flex-col items-center space-y-6">
       <img
         src="https://i.imgur.com/ariSVuW.png"
         alt="Przeglądanie filmów FlowFlix"
@@ -279,7 +279,7 @@ export default function FlowflixDownloadPageClient() {
       <img
         src="https://i.imgur.com/s9reE7u.jpeg"
         alt="Ekran główny FlowFlix"
-       className="rounded-xl shadow-lg max-w-[250px] w-full h-auto"
+       className="rounded-xl shadow-lg max-w-[225px] w-full h-auto"
       />
     </div>
   </AccordionContent>
