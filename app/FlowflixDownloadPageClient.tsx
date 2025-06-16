@@ -184,6 +184,7 @@ export default function FlowflixDownloadPageClient() {
                   'Zezwól na instalację aplikacji z "Nieznanych źródeł" (opcja może się różnić w zależności od modelu telefonu).',
                   'Otwórz pobrany plik APK (zwykle znajduje się w folderze "Pobrane").',
                   "Postępuj zgodnie z instrukcjami na ekranie, aby zakończyć instalację.",
+                  "Jesli masz komunikat z Play Protect znajdziesz w sekcje Informacje o FlowFlix.",
                 ].map((step, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
@@ -236,7 +237,7 @@ export default function FlowflixDownloadPageClient() {
        <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
          <ul className="list-disc list-inside space-y-2">
         <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści.</li>
-        <li>Aby mieć większą bazę filmów, zaloguj się do Filman. Więcej informacji znajdziesz w sekcji Szybki Start</li>
+        <li>Aby mieć większą bazę filmów, zaloguj się do Filman. Więcej informacji znajdziesz w sekcje Szybki Start</li>
         <li>Nie odpowiadamy za treści (filmy/seriale) – aplikacja ich nie hostuje.</li>
         <li>Aplikacja jest <strong>open-source</strong> dostępna na GitHub.</li>
         <li>
