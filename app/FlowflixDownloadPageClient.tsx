@@ -301,7 +301,7 @@ export default function FlowflixDownloadPageClient() {
                 <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg">
                   <h3 className="text-xl font-bold text-purple-400 mb-2">
                     Wersja: {changelogData.version}
-                    {changelogData.title && ` - ${changelogData.title}`}
+                    {` ${changelogData.title}`}
                   </h3>
                   <p className="text-sm text-slate-500 mb-3">Opublikowano: {formatDate(changelogData.publishedDate)}</p>
                   {changelogData.description ? (
