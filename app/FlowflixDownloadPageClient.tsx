@@ -23,6 +23,7 @@ import {
   Shield,
   Heart,
   Info,
+  Image,
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
@@ -196,7 +197,7 @@ export default function FlowflixDownloadPageClient() {
               </div>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="quick-start" className={accordionItemClasses.replace("mb-3", "")}>
+          <AccordionItem value="quick-start" className={accordionItemClasses}>
             <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-green-400 transition-colors">
               <div className="flex items-center">
                 <div className="p-2 rounded-full bg-green-500/20 mr-4">
@@ -258,6 +259,31 @@ export default function FlowflixDownloadPageClient() {
         </ul>
         </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="appearance" className={accordionItemClasses}>
+  <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-pink-400 transition-colors">
+    <div className="flex items-center">
+      <div className="p-2 rounded-full bg-pink-500/20 mr-4">
+        <Image className="w-5 h-5 text-pink-400" />
+      </div>
+      Wygląd FlowFlix
+    </div>
+  </AccordionTrigger>
+  <AccordionContent className="space-y-4 text-slate-400 px-8 pb-6 text-base leading-relaxed">
+    <p>Tak prezentuje się interfejs aplikacji FlowFlix:</p>
+    <div className="flex flex-col space-y-6">
+      <img
+        src="https://i.imgur.com/ariSVuW.png"
+        alt="Przeglądanie filmów FlowFlix"
+        className="rounded-xl shadow-lg border border-white/10"
+      />
+      <img
+        src="https://i.imgur.com/s9reE7u.jpeg"
+        alt="Ekran główny FlowFlix"
+       className="rounded-xl shadow-lg max-w-[300px] w-full h-auto"
+      />
+    </div>
+  </AccordionContent>
+</AccordionItem>
         </Accordion>
 
         <Card className={cardClasses}>
