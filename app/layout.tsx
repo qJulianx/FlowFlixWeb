@@ -6,7 +6,7 @@ import VisitCounterDevtools from '@/components/VisitCounterDevtools';
 
 export const metadata: Metadata = {
   title: 'FlowFlix',
-  description: 'FlowFlix – streamuj wygodnie z różnych platform',
+  description: 'FlowFlix – Platforma z różnymi Filmami/Serialami za darmo',
   generator: 'v0.dev',
   icons: {
     icon: '/favicon.ico',
