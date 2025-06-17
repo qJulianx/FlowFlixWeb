@@ -19,36 +19,7 @@ exports.modules = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   GET: () => (/* binding */ GET)\n/* harmony export */ });\n/* harmony import */ var _lib_supabase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/lib/supabase */ \"(rsc)/./lib/supabase.ts\");\n\nasync function GET() {\n    const { data, error } = await _lib_supabase__WEBPACK_IMPORTED_MODULE_0__.supabase.from('visits').select('count').limit(1).single();\n    if (error) return new Response('Błąd pobierania danych', {\n        status: 500\n    });\n    const newCount = (data.count || 0) + 1;\n    await _lib_supabase__WEBPACK_IMPORTED_MODULE_0__.supabase.from('visits').update({\n        count: newCount\n    }).eq('id', data.id);\n    return new Response(JSON.stringify({\n        count: newCount\n    }), {\n        headers: {\n            'Content-Type': 'application/json'\n        }\n    });\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXBpL3Zpc2l0LWNvdW50ZXIvcm91dGUudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBMEM7QUFFbkMsZUFBZUM7SUFDcEIsTUFBTSxFQUFFQyxJQUFJLEVBQUVDLEtBQUssRUFBRSxHQUFHLE1BQU1ILG1EQUFRQSxDQUNuQ0ksSUFBSSxDQUFDLFVBQ0xDLE1BQU0sQ0FBQyxTQUNQQyxLQUFLLENBQUMsR0FDTkMsTUFBTTtJQUVULElBQUlKLE9BQU8sT0FBTyxJQUFJSyxTQUFTLDBCQUEwQjtRQUFFQyxRQUFRO0lBQUk7SUFFdkUsTUFBTUMsV0FBVyxDQUFDUixLQUFLUyxLQUFLLElBQUksS0FBSztJQUVyQyxNQUFNWCxtREFBUUEsQ0FDWEksSUFBSSxDQUFDLFVBQ0xRLE1BQU0sQ0FBQztRQUFFRCxPQUFPRDtJQUFTLEdBQ3pCRyxFQUFFLENBQUMsTUFBTVgsS0FBS1ksRUFBRTtJQUVuQixPQUFPLElBQUlOLFNBQVNPLEtBQUtDLFNBQVMsQ0FBQztRQUFFTCxPQUFPRDtJQUFTLElBQUk7UUFDdkRPLFNBQVM7WUFBRSxnQkFBZ0I7UUFBbUI7SUFDaEQ7QUFDRiIsInNvdXJjZXMiOlsiL3dvcmtzcGFjZXMvRmxvd0ZsaXhXZWIvYXBwL2FwaS92aXNpdC1jb3VudGVyL3JvdXRlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHN1cGFiYXNlIH0gZnJvbSAnQC9saWIvc3VwYWJhc2UnO1xuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gR0VUKCkge1xuICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZVxuICAgIC5mcm9tKCd2aXNpdHMnKVxuICAgIC5zZWxlY3QoJ2NvdW50JylcbiAgICAubGltaXQoMSlcbiAgICAuc2luZ2xlKCk7XG5cbiAgaWYgKGVycm9yKSByZXR1cm4gbmV3IFJlc3BvbnNlKCdCxYLEhWQgcG9iaWVyYW5pYSBkYW55Y2gnLCB7IHN0YXR1czogNTAwIH0pO1xuXG4gIGNvbnN0IG5ld0NvdW50ID0gKGRhdGEuY291bnQgfHwgMCkgKyAxO1xuXG4gIGF3YWl0IHN1cGFiYXNlXG4gICAgLmZyb20oJ3Zpc2l0cycpXG4gICAgLnVwZGF0ZSh7IGNvdW50OiBuZXdDb3VudCB9KVxuICAgIC5lcSgnaWQnLCBkYXRhLmlkKTtcblxuICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgY291bnQ6IG5ld0NvdW50IH0pLCB7XG4gICAgaGVhZGVyczogeyAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sXG4gIH0pO1xufVxuIl0sIm5hbWVzIjpbInN1cGFiYXNlIiwiR0VUIiwiZGF0YSIsImVycm9yIiwiZnJvbSIsInNlbGVjdCIsImxpbWl0Iiwic2luZ2xlIiwiUmVzcG9uc2UiLCJzdGF0dXMiLCJuZXdDb3VudCIsImNvdW50IiwidXBkYXRlIiwiZXEiLCJpZCIsIkpTT04iLCJzdHJpbmdpZnkiLCJoZWFkZXJzIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./app/api/visit-counter/route.ts\n");
-
-/***/ }),
-
-/***/ "(rsc)/./lib/supabase.ts":
-/*!*************************!*\
-  !*** ./lib/supabase.ts ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   supabase: () => (/* binding */ supabase)\n/* harmony export */ });\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @supabase/supabase-js */ \"(rsc)/./node_modules/.pnpm/@supabase+supabase-js@2.50.0/node_modules/@supabase/supabase-js/dist/module/index.js\");\n\nconst supabaseUrl = \"https://qoeicnhnadennxtifpmg.supabase.co\";\nconst supabaseAnonKey = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvZWljbmhuYWRlbm54dGlmcG1nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxNzk4OTQsImV4cCI6MjA2NTc1NTg5NH0.lFUwtHf19E3SoE5GNcMNLYA-Up_y-HORIqTb_cLzaXU\";\nconst supabase = (0,_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0__.createClient)(supabaseUrl, supabaseAnonKey);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9saWIvc3VwYWJhc2UudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBcUQ7QUFFckQsTUFBTUMsY0FBY0MsMENBQW9DO0FBQ3hELE1BQU1HLGtCQUFrQkgsa05BQXlDO0FBRTFELE1BQU1LLFdBQVdQLG1FQUFZQSxDQUFDQyxhQUFhSSxpQkFBaUIiLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0Zsb3dGbGl4V2ViL2xpYi9zdXBhYmFzZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVDbGllbnQgfSBmcm9tICdAc3VwYWJhc2Uvc3VwYWJhc2UtanMnO1xuXG5jb25zdCBzdXBhYmFzZVVybCA9IHByb2Nlc3MuZW52Lk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCE7XG5jb25zdCBzdXBhYmFzZUFub25LZXkgPSBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSE7XG5cbmV4cG9ydCBjb25zdCBzdXBhYmFzZSA9IGNyZWF0ZUNsaWVudChzdXBhYmFzZVVybCwgc3VwYWJhc2VBbm9uS2V5KTtcbiJdLCJuYW1lcyI6WyJjcmVhdGVDbGllbnQiLCJzdXBhYmFzZVVybCIsInByb2Nlc3MiLCJlbnYiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwiLCJzdXBhYmFzZUFub25LZXkiLCJORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSIsInN1cGFiYXNlIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./lib/supabase.ts\n");
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/.pnpm/@supabase+realtime-js@2.11.10/node_modules/@supabase/realtime-js/dist/main sync recursive":
-/*!*************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/@supabase+realtime-js@2.11.10/node_modules/@supabase/realtime-js/dist/main/ sync ***!
-  \*************************************************************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "(rsc)/./node_modules/.pnpm/@supabase+realtime-js@2.11.10/node_modules/@supabase/realtime-js/dist/main sync recursive";
-module.exports = webpackEmptyContext;
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   GET: () => (/* binding */ GET)\n/* harmony export */ });\nlet count = 0; // resetuje się po restarcie\nasync function GET() {\n    count++;\n    return new Response(JSON.stringify({\n        count\n    }), {\n        headers: {\n            'Content-Type': 'application/json'\n        }\n    });\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9hcHAvYXBpL3Zpc2l0LWNvdW50ZXIvcm91dGUudHMiLCJtYXBwaW5ncyI6Ijs7OztBQUFBLElBQUlBLFFBQVEsR0FBRyw0QkFBNEI7QUFFcEMsZUFBZUM7SUFDcEJEO0lBQ0EsT0FBTyxJQUFJRSxTQUFTQyxLQUFLQyxTQUFTLENBQUM7UUFBRUo7SUFBTSxJQUFJO1FBQzdDSyxTQUFTO1lBQUUsZ0JBQWdCO1FBQW1CO0lBQ2hEO0FBQ0YiLCJzb3VyY2VzIjpbIi93b3Jrc3BhY2VzL0Zsb3dGbGl4V2ViL2FwcC9hcGkvdmlzaXQtY291bnRlci9yb3V0ZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgY291bnQgPSAwOyAvLyByZXNldHVqZSBzacSZIHBvIHJlc3RhcmNpZVxuXG5leHBvcnQgYXN5bmMgZnVuY3Rpb24gR0VUKCkge1xuICBjb3VudCsrO1xuICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgY291bnQgfSksIHtcbiAgICBoZWFkZXJzOiB7ICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSxcbiAgfSk7XG59Il0sIm5hbWVzIjpbImNvdW50IiwiR0VUIiwiUmVzcG9uc2UiLCJKU09OIiwic3RyaW5naWZ5IiwiaGVhZGVycyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./app/api/visit-counter/route.ts\n");
 
 /***/ }),
 
@@ -105,92 +76,6 @@ module.exports = require("next/dist/server/app-render/work-unit-async-storage.ex
 
 /***/ }),
 
-/***/ "?8bfc":
-/*!****************************!*\
-  !*** bufferutil (ignored) ***!
-  \****************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "?cf7b":
-/*!********************************!*\
-  !*** utf-8-validate (ignored) ***!
-  \********************************/
-/***/ (() => {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "buffer":
-/*!*************************!*\
-  !*** external "buffer" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("buffer");
-
-/***/ }),
-
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("crypto");
-
-/***/ }),
-
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("events");
-
-/***/ }),
-
-/***/ "http":
-/*!***********************!*\
-  !*** external "http" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http");
-
-/***/ }),
-
-/***/ "https":
-/*!************************!*\
-  !*** external "https" ***!
-  \************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("https");
-
-/***/ }),
-
-/***/ "net":
-/*!**********************!*\
-  !*** external "net" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("net");
-
-/***/ }),
-
 /***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":
 /*!*************************************************************************!*\
   !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!
@@ -211,61 +96,6 @@ module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js
 "use strict";
 module.exports = require("next/dist/compiled/next-server/app-route.runtime.dev.js");
 
-/***/ }),
-
-/***/ "punycode":
-/*!***************************!*\
-  !*** external "punycode" ***!
-  \***************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("punycode");
-
-/***/ }),
-
-/***/ "stream":
-/*!*************************!*\
-  !*** external "stream" ***!
-  \*************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ "tls":
-/*!**********************!*\
-  !*** external "tls" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tls");
-
-/***/ }),
-
-/***/ "url":
-/*!**********************!*\
-  !*** external "url" ***!
-  \**********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("url");
-
-/***/ }),
-
-/***/ "zlib":
-/*!***********************!*\
-  !*** external "zlib" ***!
-  \***********************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("zlib");
-
 /***/ })
 
 };
@@ -275,7 +105,7 @@ module.exports = require("zlib");
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0","vendor-chunks/@supabase+auth-js@2.70.0","vendor-chunks/ws@8.18.2","vendor-chunks/@supabase+realtime-js@2.11.10","vendor-chunks/@supabase+postgrest-js@1.19.4","vendor-chunks/@supabase+storage-js@2.7.1","vendor-chunks/@supabase+supabase-js@2.50.0","vendor-chunks/whatwg-url@5.0.0","vendor-chunks/@supabase+functions-js@2.4.4","vendor-chunks/tr46@0.0.3","vendor-chunks/webidl-conversions@3.0.1","vendor-chunks/@supabase+node-fetch@2.6.15"], () => (__webpack_exec__("(rsc)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fapi%2Fvisit-counter%2Froute&page=%2Fapi%2Fvisit-counter%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fvisit-counter%2Froute.ts&appDir=%2Fworkspaces%2FFlowFlixWeb%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fworkspaces%2FFlowFlixWeb&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0"], () => (__webpack_exec__("(rsc)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fapi%2Fvisit-counter%2Froute&page=%2Fapi%2Fvisit-counter%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fvisit-counter%2Froute.ts&appDir=%2Fworkspaces%2FFlowFlixWeb%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fworkspaces%2FFlowFlixWeb&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
