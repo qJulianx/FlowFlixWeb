@@ -27,7 +27,9 @@ import {
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
-const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/latest"
+const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
+const GITHUB_REPO_OWNER = 'FlowFlix';
+const GITHUB_REPO_NAME = 'FlowFlix_Early_Alpha';
 
 export default function FlowflixDownloadPageClient() {
   const [changelogData, setChangelogData] = useState<ChangelogInfo | null>(null)
@@ -154,12 +156,12 @@ export default function FlowflixDownloadPageClient() {
         <p className="text-sm text-slate-500 pt-2">
           Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
-            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.4/app-release.apk"
+            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.6/app-release.apk"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
+            className="text-pink-500 underline hover:text-red-500 font-semibold" 
           >
-            pobierz
+            Pobierz
           </a>
         </p>
       </CardContent>
@@ -186,17 +188,35 @@ export default function FlowflixDownloadPageClient() {
                   'Otwórz pobrany plik APK (zwykle znajduje się w folderze "Pobrane").',
                   "Postępuj zgodnie z instrukcjami na ekranie, aby zakończyć instalację.",
                   "Jesli masz komunikat z Play Protect zażyj do sekcji Informacje o FlowFlix.",
+                  "Wejdź na naszego Discorda aby być na bieżąco - DISCORD.",
                 ].map((step, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                       {index + 1}
                     </div>
-                    <p className="flex-1">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
+                  <p className="flex-1">
+              {step.includes("DISCORD") ? (
+              <>
+                Wejdź na naszego Discorda aby być na bieżąco –{" "}
+                <a
+                  href="https://discord.gg/VSUWb283RK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400/95 underline hover:text-pink-400 font-semibold"
+                >
+                  DISCORD
+                </a>
+                .
+              </>
+            ) : (
+              step
+            )}
+          </p>
+        </div>
+      ))}
+        </div>
+        </AccordionContent>
+        </AccordionItem>
           <AccordionItem value="quick-start" className={accordionItemClasses}>
             <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-green-400 transition-colors">
               <div className="flex items-center">
@@ -207,24 +227,45 @@ export default function FlowflixDownloadPageClient() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="space-y-3 text-slate-400 px-8 pb-6 text-base leading-relaxed">
-              <div className="space-y-4">
-                {[
-                  "Po zainstalowaniu, otwórz aplikację FlowFlix.",
-                  "Zaloguj się na swoje konto lub utwórz nowe, jeśli nie chcesz użyj Kontynuj jako gość.",
-                  "Aby utworzyć konto wejdź na https://filman.cc/rejestracja",
-                  "Przeglądaj bibliotekę filmów i seriali.",
-                  "Wybierz interesujący Cię tytuł i rozpocznij oglądanie.",
-                  "Ciesz się nieograniczonym dostępem do rozrywki!",
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                      {index + 1}
-                    </div>
-                    <p className="flex-1">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </AccordionContent>
+            <div className="space-y-4">
+              {[
+                "Po zainstalowaniu, otwórz aplikację FlowFlix.",
+                "Zaloguj się na swoje konto lub utwórz nowe, jeśli nie chcesz użyj Kontynuj jako gość.",
+                "Aby utworzyć konto wejdź na https://filman.cc/rejestracja",
+                "Przeglądaj bibliotekę filmów i seriali.",
+                "Wybierz interesujący Cię tytuł i rozpocznij oglądanie.",
+                "Ciesz się nieograniczonym dostępem do rozrywki!",
+              ].map((step, index) => {
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      const parts = step.split(urlRegex);
+
+      return (
+        <div key={index} className="flex items-start space-x-3">
+          <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+            {index + 1}
+          </div>
+          <p className="flex-1">
+            {parts.map((part, i) =>
+              urlRegex.test(part) ? (
+                <a
+                  key={i}
+                  href={part}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400  hover:text-blue-400"
+                >
+                  {part}
+                </a>
+              ) : (
+                <span key={i}>{part}</span>
+              )
+            )}
+          </p>
+          </div>
+        );
+       })}
+       </div>
+        </AccordionContent>
           </AccordionItem>
           <AccordionItem value="info" className={accordionItemClasses}>
           <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-blue-400 transition-colors">
@@ -251,7 +292,7 @@ export default function FlowflixDownloadPageClient() {
           href="https://shorturl.at/PVbJW"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 underline hover:text-blue-300"
+          className="text-purple-400 underline hover:text-blue-300"
         >
           zobacz wynik
         </a>
@@ -269,13 +310,15 @@ export default function FlowflixDownloadPageClient() {
     </div>
   </AccordionTrigger>
   <AccordionContent className="space-y-4 text-slate-400 px-8 pb-6 text-base leading-relaxed">
-    <p>Tak prezentuje się interfejs aplikacji FlowFlix:</p>
-    <div className="flex flex-col items-center space-y-6">
+    
+    <div className="flex flex-col items-center space-y-2">
+      <p>Tak prezentuje się interfejs FlowFlix na TV:</p>
       <img
         src="https://i.imgur.com/ariSVuW.png"
-        alt="Przeglądanie filmów FlowFlix"
+        alt="Ekran główny FlowFlix - TV"
         className="rounded-xl shadow-lg border border-white/10"
       />
+      <p>Aplikacja:</p>
       <img
         src="https://i.imgur.com/s9reE7u.jpeg"
         alt="Ekran główny FlowFlix"
@@ -301,6 +344,14 @@ export default function FlowflixDownloadPageClient() {
               <div className="flex items-center space-x-3 text-slate-400 py-4">
                 <Loader2 className="h-6 w-6 animate-spin text-purple-400" />
                 <span className="text-lg">Ładowanie informacji o zmianach...</span>
+                 <a
+                    href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 underline hover:underline font-semibold"
+                  >
+                    sprawdź wersje
+                  </a>
               </div>
             )}
             {changelogData?.error && !isLoadingChangelog && (
@@ -378,7 +429,7 @@ export default function FlowflixDownloadPageClient() {
                 </div>
               </a>
               <a
-                href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/issues/"
+                href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/issues/1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center p-4 bg-slate-500/10 border border-slate-500/20 rounded-lg hover:bg-slate-500/20 transition-all duration-300 group"
