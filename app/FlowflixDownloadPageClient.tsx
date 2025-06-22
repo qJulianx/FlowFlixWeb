@@ -287,9 +287,9 @@ export default function FlowflixDownloadPageClient() {
         Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
         </li>
         <li>
-        Jeśli nam nie ufasz, możesz zrobić test na stronie typu <strong>VirusTotal</strong>. Nasz test wersji (v1.4):{" "}
+        Jeśli nam nie ufasz, możesz zrobić test na stronie typu <strong>VirusTotal</strong>. Nasz test wersji (v1.7):{" "}
         <a
-          href="https://shorturl.at/PVbJW"
+          href="https://shorturl.at/1UxhD"
           target="_blank"
           rel="noopener noreferrer"
           className="text-purple-400 underline hover:text-blue-300"
