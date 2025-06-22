@@ -156,7 +156,7 @@ export default function FlowflixDownloadPageClient() {
         <p className="text-sm text-slate-500 pt-2">
           Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
-            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.6/app-release.apk"
+            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.7/app-release.apk"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-500 underline hover:text-red-500 font-semibold" 
