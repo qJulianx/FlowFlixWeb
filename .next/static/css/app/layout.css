@@ -1905,6 +1905,48 @@ video {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+.text-blue-500\/90 {
+  color: rgb(59 130 246 / 0.9);
+}
+.text-blue-500\/80 {
+  color: rgb(59 130 246 / 0.8);
+}
+.text-blue-500\/50 {
+  color: rgb(59 130 246 / 0.5);
+}
+.text-teal-500 {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity, 1));
+}
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgb(45 212 191 / var(--tw-text-opacity, 1));
+}
+.text-teal-300 {
+  --tw-text-opacity: 1;
+  color: rgb(94 234 212 / var(--tw-text-opacity, 1));
+}
+.text-teal-700 {
+  --tw-text-opacity: 1;
+  color: rgb(15 118 110 / var(--tw-text-opacity, 1));
+}
+.text-teal-600 {
+  --tw-text-opacity: 1;
+  color: rgb(13 148 136 / var(--tw-text-opacity, 1));
+}
+.text-teal-400\/80 {
+  color: rgb(45 212 191 / 0.8);
+}
+.text-teal-400\/90 {
+  color: rgb(45 212 191 / 0.9);
+}
+.text-teal-400\/70 {
+  color: rgb(45 212 191 / 0.7);
+}
 .underline {
   text-decoration-line: underline;
 }
@@ -2347,6 +2389,16 @@ video {
 }
 .hover\:text-sidebar-accent-foreground:hover {
   color: hsl(var(--sidebar-accent-foreground));
+}
+.hover\:text-teal-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(20 184 166 / var(--tw-text-opacity, 1));
+}
+.hover\:text-teal-500\/80:hover {
+  color: rgb(20 184 166 / 0.8);
+}
+.hover\:text-teal-500\/90:hover {
+  color: rgb(20 184 166 / 0.9);
 }
 .hover\:underline:hover {
   text-decoration-line: underline;

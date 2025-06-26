@@ -153,10 +153,11 @@ export default function FlowflixDownloadPageClient() {
             <span>Przejdź do strony pobierania</span>
           </a>
         </Button>
+        <div className="flex flex-col items-center space-y-1">
         <p className="text-sm text-slate-500 pt-2">
           Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
-            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.7/app-release.apk"
+            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.8/app-release.apk"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-500 underline hover:text-red-500 font-semibold" 
@@ -164,6 +165,18 @@ export default function FlowflixDownloadPageClient() {
             Pobierz
           </a>
         </p>
+        <p className="text-sm text-slate-500">
+           Bądź na bieżąco - {' '}
+          <a
+            href="https://discord.gg/VSUWb283RK"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 underline hover:text-teal-500/90 font-semibold" 
+          >
+            <strong>DISCORD</strong>
+          </a>
+        </p>
+        </div>
       </CardContent>
     </Card>
 
@@ -281,7 +294,7 @@ export default function FlowflixDownloadPageClient() {
         <li>Aplikacja korzysta z publicznych źródeł takich jak <strong>Filman</strong> do wyświetlania treści bez reklam.</li>
         <li>Aby mieć większą bazę filmów, zaloguj się do Filman. Więcej informacji znajdziesz w sekcje Szybki Start</li>
         <li>Nie odpowiadamy za treści (filmy/seriale) – aplikacja ich nie hostuje.</li>
-        <li>Aplikacja jest <strong>open-source</strong> dostępna na GitHub.</li>
+        <li>Aplikacja jest  dostępna na <strong>GitHub</strong>.</li>
         <li>
         Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się, jest tak dlatego bo aplikacja nie jest w Sklep Play.
         Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
