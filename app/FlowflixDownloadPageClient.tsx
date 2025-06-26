@@ -153,7 +153,7 @@ export default function FlowflixDownloadPageClient() {
             <span>Przejdź do strony pobierania</span>
           </a>
         </Button>
-        <div className="flex flex-col items-center space-y-1">
+        <div className="flex flex-col items-stretch space-y-1">
         <p className="text-sm text-slate-500 pt-2">
           Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
@@ -166,7 +166,7 @@ export default function FlowflixDownloadPageClient() {
           </a>
         </p>
         <p className="text-sm text-slate-500">
-           Bądź na bieżąco - {' '}
+           &nbsp; &nbsp;Bądź na bieżąco - {' '}
           <a
             href="https://discord.gg/VSUWb283RK"
             target="_blank"
@@ -297,7 +297,7 @@ export default function FlowflixDownloadPageClient() {
         <li>Aplikacja jest  dostępna na <strong>GitHub</strong>.</li>
         <li>
         Jeśli zobaczysz komunikat z <strong>Play Protect</strong>, nie przejmuj się, jest tak dlatego bo aplikacja nie jest w Sklep Play.
-        Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em>.
+        Kliknij <em>"Więcej szczegółów"</em> → <em>"Zainstaluj mimo to"</em> lub kliknij <em>"Skanuj"</em>.
         </li>
         <li>
         Jeśli nam nie ufasz, możesz zrobić test na stronie typu <strong>VirusTotal</strong>. Nasz test wersji (v1.7):{" "}
