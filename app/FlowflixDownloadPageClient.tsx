@@ -28,8 +28,6 @@ import {
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
 const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
-const GITHUB_REPO_OWNER = 'FlowFlix';
-const GITHUB_REPO_NAME = 'FlowFlix_Early_Alpha';
 
 export default function FlowflixDownloadPageClient() {
   const [changelogData, setChangelogData] = useState<ChangelogInfo | null>(null)
