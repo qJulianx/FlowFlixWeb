@@ -155,7 +155,7 @@ export default function FlowflixDownloadPageClient() {
         <p className="text-sm text-slate-500 pt-2">
           Zostaniesz przekierowany na stronę GitHub, lub kliknij{' '}
           <a
-            href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/1.8/app-release.apk"
+            href="https://flowflix.vercel.app/tv"
             target="_blank"
             rel="noopener noreferrer"
             className="text-pink-500 underline hover:text-red-500 font-semibold" 
@@ -199,6 +199,7 @@ export default function FlowflixDownloadPageClient() {
                   'Otwórz pobrany plik APK (zwykle znajduje się w folderze "Pobrane").',
                   "Postępuj zgodnie z instrukcjami na ekranie, aby zakończyć instalację.",
                   "Jesli masz komunikat z Play Protect zażyj do sekcji Informacje o FlowFlix.",
+                  "Prosta instalacja na TV - Wejdź na flowflix.vercel.app/tv ",
                   "Wejdź na naszego Discorda aby być na bieżąco - DISCORD.",
                 ].map((step, index) => (
                   <div key={index} className="flex items-start space-x-3">
