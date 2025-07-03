@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 
+export const dynamic = "force-dynamic"; // wymusza SSR przy każdym żądaniu
+
 export default async function TVPage() {
-  // Pobierz najnowszy release z GitHub API
   const res = await fetch(
     "https://api.github.com/repos/FlowFlix/FlowFlix_Early_Alpha/releases/latest",
     {
@@ -20,6 +21,5 @@ export default async function TVPage() {
   const versionTag = data.tag_name; // np. "1.9"
   const apkUrl = `https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/${versionTag}/app-release.apk`;
 
-  // Przekierowanie do najnowszego APK
   redirect(apkUrl);
 }
