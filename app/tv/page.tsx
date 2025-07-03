@@ -16,8 +16,9 @@ export default async function TVPage() {
   );
 
   if (!res.ok) {
-    console.error("Response status:", res.status);
-    throw new Error("Nie udało się pobrać najnowszego release z GitHub.");
+    const errorText = await res.text();
+    console.error("GitHub API error:", res.status, errorText);
+    throw new Error(`GitHub API returned ${res.status}: ${errorText}`);
   }
 
   const data = await res.json();
