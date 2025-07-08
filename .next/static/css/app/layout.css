@@ -1388,6 +1388,9 @@ video {
 .border-slate-500\/20 {
   border-color: rgb(100 116 139 / 0.2);
 }
+.border-slate-600\/30 {
+  border-color: rgb(71 85 105 / 0.3);
+}
 .border-slate-700\/30 {
   border-color: rgb(51 65 85 / 0.3);
 }
@@ -1478,6 +1481,9 @@ video {
 .bg-slate-500\/20 {
   background-color: rgb(100 116 139 / 0.2);
 }
+.bg-slate-800\/40 {
+  background-color: rgb(30 41 59 / 0.4);
+}
 .bg-slate-900\/30 {
   background-color: rgb(15 23 42 / 0.3);
 }
@@ -1490,6 +1496,9 @@ video {
 }
 .bg-yellow-500\/10 {
   background-color: rgb(234 179 8 / 0.1);
+}
+.bg-yellow-500\/20 {
+  background-color: rgb(234 179 8 / 0.2);
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -1873,6 +1882,10 @@ video {
 .text-slate-100 {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity, 1));
+}
+.text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity, 1));
 }
 .text-slate-300 {
   --tw-text-opacity: 1;
@@ -2350,6 +2363,10 @@ video {
 }
 .hover\:text-teal-500\/90:hover {
   color: rgb(20 184 166 / 0.9);
+}
+.hover\:text-yellow-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 .hover\:underline:hover {
   text-decoration-line: underline;
