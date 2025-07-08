@@ -458,43 +458,7 @@ export default function FlowflixDownloadPageClient() {
           </CardContent>
         </Card>
       </main>
-<Accordion type="single" collapsible className="w-full max-w-4xl mx-auto mt-16">
-  <AccordionItem value="faq-1" className={accordionItemClasses}>
-    <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-yellow-400 transition-colors">
-      <div className="flex items-center">
-        
-        Czy FlowFlix działa na tosterze?
-      </div>
-    </AccordionTrigger>
-    <AccordionContent className="text-slate-400 px-8 pb-6 text-base leading-relaxed bg-slate-800/40 border border-slate-600/30 rounded-lg">
-      Tylko jeśli zainstalujesz tam Androida i masz dużo cierpliwości. 😅
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="faq-2" className={accordionItemClasses}>
-    <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-yellow-400 transition-colors">
-      <div className="flex items-center">
-        Dlaczego serial nie działa, a film działa?
-      </div>
-    </AccordionTrigger>
-    <AccordionContent className="text-slate-400 px-8 pb-6 text-base leading-relaxed bg-slate-800/40 border border-slate-600/30 rounded-lg">
-      Być może seriale mają fochy. Albo źródło wygasło — spróbuj innego!
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="faq-3" className={accordionItemClasses}>
-    <AccordionTrigger className="hover:no-underline text-xl font-bold text-slate-100 px-8 py-6 hover:text-yellow-400 transition-colors">
-      <div className="flex items-center">
-        Czy mogę oglądać bez internetu?
-      </div>
-    </AccordionTrigger>
-    <AccordionContent className="text-slate-400 px-8 pb-6 text-base leading-relaxed bg-slate-800/40 border border-slate-600/30 rounded-lg">
-      Nie, ale możesz patrzeć się w ekran i udawać, że coś się dzieje. 🎬
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
-
-
+      
       <footer className="w-full max-w-4xl mt-16 pt-8 border-t border-slate-700/50 text-center z-10">
         <p className="text-slate-400 mb-6 text-lg">Śledź nas w mediach społecznościowych</p>
         <div className="flex justify-center space-x-8 mb-8">
