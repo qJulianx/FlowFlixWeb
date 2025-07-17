@@ -1,5 +1,5 @@
 "use client"
-
+import DiscordMemberCount from '@/components/DiscordMemberCount'
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -163,8 +163,8 @@ export default function FlowflixDownloadPageClient() {
             Pobierz
           </a>
         </p>
-        <p className="text-sm text-slate-500">
-           &nbsp; &nbsp;Bądź na bieżąco - {' '}
+        <p className="text-sm text-slate-500"> 
+           &nbsp; &nbsp;Bądź na bieżąco - {' '} <DiscordMemberCount /> osób&nbsp;
           <a
             href="https://discord.gg/VSUWb283RK"
             target="_blank"
