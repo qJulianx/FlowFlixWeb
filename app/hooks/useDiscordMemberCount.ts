@@ -1,28 +1,31 @@
-// /app/hooks/useDiscordMemberCount.ts
-
-'use client';
-
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function useDiscordMemberCount() {
-  const [memberCount, setMemberCount] = useState<number | null>(null);
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    async function fetchMemberCount() {
+    const fetchMemberCount = async () => {
       try {
-        const response = await fetch(
-          'https://discord.com/api/guilds/1338569820320436314/widget.json'
-        );
-        if (!response.ok) throw new Error('Nie udało się pobrać danych');
-        const data = await response.json();
-        setMemberCount(data.presence_count || data.members?.length || 0);
+        const res = await fetch("https://discord.com/api/guilds/1338569820320436314/widget.json");
+
+        if (!res.ok) {
+          console.error("❌ Fetch failed:", res.status, res.statusText);
+          return;
+        }
+
+        const data = await res.json();
+        if (!data.presence_count) {
+          console.warn("⚠️ Brak presence_count w odpowiedzi JSON:", data);
+        } else {
+          setCount(data.presence_count);
+        }
       } catch (error) {
-        console.error('Błąd podczas pobierania liczby członków Discorda:', error);
+        console.error("❌ Błąd podczas pobierania widżetu Discorda:", error);
       }
-    }
+    };
 
     fetchMemberCount();
   }, []);
 
-  return memberCount;
+  return count;
 }
