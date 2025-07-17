@@ -9,7 +9,7 @@ export default function DiscordMemberCount() {
 
   return (
     <span className="font-bold text-blue-400">
-      {memberCount !== null ? `${memberCount} osoby na ` : '...'}
+      {memberCount !== null ? `${memberCount} osób ` : '...'}
     </span>
   );
 }

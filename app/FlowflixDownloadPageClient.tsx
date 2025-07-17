@@ -164,7 +164,7 @@ export default function FlowflixDownloadPageClient() {
           </a>
         </p>
         <p className="text-sm text-slate-500"> 
-           &nbsp; &nbsp;Bądź na bieżąco - {' '} <DiscordMemberCount /> osób&nbsp;
+           &nbsp; &nbsp;Bądź na bieżąco - {' '} <DiscordMemberCount /> &nbsp;
           <a
             href="https://discord.gg/VSUWb283RK"
             target="_blank"
