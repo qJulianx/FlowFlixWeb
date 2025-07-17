@@ -1,9 +1,9 @@
 {
   "node": {
-    "00fa1085154ff3823351d02c1280fe220a8d29fe6c": {
+    "0092a947748ab530c56b3330186375728380d8ba66": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2FFlowFlixWeb%2Fapp%2Factions.ts%22%2C%5B%7B%22id%22%3A%2200fa1085154ff3823351d02c1280fe220a8d29fe6c%22%2C%22exportedName%22%3A%22getLatestReleaseChangelog%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.2.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2FFlowFlixWeb%2Fapp%2Factions.ts%22%2C%5B%7B%22id%22%3A%220092a947748ab530c56b3330186375728380d8ba66%22%2C%22exportedName%22%3A%22getLatestReleaseChangelog%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -13,5 +13,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "zDWrNvbveJga/Nko0hrVpjpviHeSZtyJy8VN21UVMxc="
+  "encryptionKey": "hS4omupcqZ5Add8ofrq7/C7nfspueaPpNSsepxH66tY="
 }

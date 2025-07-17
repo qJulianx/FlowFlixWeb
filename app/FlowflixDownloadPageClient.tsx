@@ -164,7 +164,7 @@ export default function FlowflixDownloadPageClient() {
           </a>
         </p>
         <p className="text-sm text-slate-500"> 
-           &nbsp; &nbsp;Bądź na bieżąco - {' '} <DiscordMemberCount /> &nbsp;
+           &nbsp; &nbsp;Bądź na bieżąco - {' '}
           <a
             href="https://discord.gg/VSUWb283RK"
             target="_blank"
@@ -172,7 +172,8 @@ export default function FlowflixDownloadPageClient() {
             className="text-blue-400 underline hover:text-teal-500/90 font-semibold" 
           >
             <strong>DISCORD</strong>
-          </a>
+          </a>{' '}
+          <DiscordMemberCount />
         </p>
         </div>
       </CardContent>
@@ -198,7 +199,7 @@ export default function FlowflixDownloadPageClient() {
                   'Zezwól na instalację aplikacji z "Nieznanych źródeł" (opcja może się różnić w zależności od modelu telefonu).',
                   'Otwórz pobrany plik APK (zwykle znajduje się w folderze "Pobrane").',
                   "Postępuj zgodnie z instrukcjami na ekranie, aby zakończyć instalację.",
-                  "Jesli masz komunikat z Play Protect zażyj do sekcji Informacje o FlowFlix.",
+                  "Jesli masz komunikat z Play Protect zajrzyj do sekcji Informacje o FlowFlix.",
                   "Prosta instalacja na TV - Wejdź na flowflix.vercel.app/tv ",
                   "Wejdź na naszego Discorda aby być na bieżąco - DISCORD.",
                 ].map((step, index) => (
