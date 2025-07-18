@@ -1804,6 +1804,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity, 1));
 }
+.text-blue-400\/85 {
+  color: rgb(96 165 250 / 0.85);
+}
 .text-card-foreground {
   color: hsl(var(--card-foreground));
 }
@@ -1904,19 +1907,6 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
-}
-.text-blue-300 {
-  --tw-text-opacity: 1;
-  color: rgb(147 197 253 / var(--tw-text-opacity, 1));
-}
-.text-blue-400\/80 {
-  color: rgb(96 165 250 / 0.8);
-}
-.text-blue-400\/90 {
-  color: rgb(96 165 250 / 0.9);
-}
-.text-blue-400\/85 {
-  color: rgb(96 165 250 / 0.85);
 }
 .underline {
   text-decoration-line: underline;

@@ -3,7 +3,7 @@
 **FlowFlix** to nieoficjalna, wieloplatformowa aplikacja stworzona z wykorzystaniem Fluttera, umożliwiająca przeglądanie, wyszukiwanie i odtwarzanie filmów oraz seriali z różnych źródeł
 takich jak **filman.cc** **zaluknij.cc** czy **ekino-tv.pl** itd. w jednym, wygodnym miejscu. Aplikacja agreguje treści wideo i oferuje intuicyjny interfejs w stylu popularnych platform VOD.
 
-## 📢 Dołącz do naszej społeczności
+## 📢Dołącz do naszej społeczności
 [Kliknij tutaj, aby dołączyć na Discord](https://discord.gg/VSUWb283RK)
 
 ## 🚀Główne funkcjonalności
