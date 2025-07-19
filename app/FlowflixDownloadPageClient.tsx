@@ -485,8 +485,6 @@ export default function FlowflixDownloadPageClient() {
             <a
               href="https://flowflix.vercel.app/DMCA"
               className="underline hover:text-teal-400 transition"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               DMCA
             </a>
