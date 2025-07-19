@@ -481,9 +481,18 @@ export default function FlowflixDownloadPageClient() {
         </div>
         <div className="space-y-2">
           <p className="text-slate-500">&copy; {new Date().getFullYear()} FlowFlix. Wszelkie prawa zastrzeżone.</p>
-          <p className="text-xs text-slate-600">{""}</p>
+          <p className="text-s text-slate-500">
+            <a
+              href="https://flowflix.vercel.app/DMCA"
+              className="underline hover:text-teal-400 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DMCA
+            </a>
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }

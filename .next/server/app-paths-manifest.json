@@ -1,4 +1,4 @@
 {
-  "/api/visit-counter/route": "app/api/visit-counter/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/DMCA/page": "app/DMCA/page.js"
 }
