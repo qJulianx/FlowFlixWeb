@@ -12,8 +12,8 @@ interface GitHubReleaseResponse {
   body: string | null // Changelog in Markdown
   assets: GitHubReleaseAsset[]
   published_at: string
-  prerelease?: boolean // Dodaj to pole
-  draft?: boolean // Dodaj to pole
+  prerelease?: boolean 
+  draft?: boolean 
   message?: string // For API error messages
   documentation_url?: string
 }
@@ -26,7 +26,7 @@ export interface ChangelogInfo {
   error?: string
 }
 
-// Używamy poprawnej wielkości liter ze zrzutu ekranu
+
 const GITHUB_REPO_OWNER = "FlowFlix"
 const GITHUB_REPO_NAME = "FlowFlix_Early_Alpha"
 

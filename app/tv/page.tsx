@@ -18,7 +18,7 @@ async function fetchLatestRelease() {
 
   const res = await fetch(apiUrl, {
     headers,
-    next: { revalidate: 900 }, // cache 15 min
+    next: { revalidate: 600 }, 
   });
 
   if (res.ok) {
@@ -28,7 +28,7 @@ async function fetchLatestRelease() {
     const allReleasesUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases`;
     const allReleasesRes = await fetch(allReleasesUrl, {
       headers,
-      next: { revalidate: 900 },
+      next: { revalidate: 600 },
     });
 
     if (!allReleasesRes.ok) {

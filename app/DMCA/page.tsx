@@ -27,7 +27,7 @@ export default function DMCAPage() {
         {/* Przycisk */}
         <div className="text-center">
           <a
-            href="https://flowflix.vercel.app"
+            href="/"
             className="inline-block mt-4 bg-teal-500 hover:bg-teal-400 text-white font-semibold py-2 px-6 rounded transition-colors duration-300"
           >
             Wróć do strony

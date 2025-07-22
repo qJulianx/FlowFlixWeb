@@ -21,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* 🔽 Komponent licznika */}
-        <VisitCounterDevtools />
-        {/* 🔽 Zawartość strony */}
+        
         {children}
       </body>
     </html>
