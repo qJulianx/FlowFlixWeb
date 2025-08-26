@@ -18,13 +18,12 @@ async function fetchLatestRelease() {
 
   const res = await fetch(apiUrl, {
     headers,
-    next: { revalidate: 600 }, 
+    next: { revalidate: 600 },
   });
 
   if (res.ok) {
     return await res.json();
   } else if (res.status === 404) {
-    // fallback na pobranie wszystkich wydań
     const allReleasesUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases`;
     const allReleasesRes = await fetch(allReleasesUrl, {
       headers,
@@ -37,21 +36,9 @@ async function fetchLatestRelease() {
     }
 
     const allReleases = await allReleasesRes.json();
-
-    // znajdź stabilne wydanie (nie draft, nie prerelease)
-    const stableRelease = allReleases.find(
-      (r: any) => !r.prerelease && !r.draft
-    );
-
-    if (stableRelease) {
-      return stableRelease;
-    }
-
-    // jeśli nie ma stabilnych, zwróć pierwsze z listy
-    if (allReleases.length > 0) {
-      return allReleases[0];
-    }
-
+    const stableRelease = allReleases.find((r: any) => !r.prerelease && !r.draft);
+    if (stableRelease) return stableRelease;
+    if (allReleases.length > 0) return allReleases[0];
     throw new Error("No releases found in the repository");
   } else {
     const errorText = await res.text();
@@ -63,12 +50,18 @@ export default async function TVPage() {
   try {
     const releaseData = await fetchLatestRelease();
 
-    const versionTag = releaseData.tag_name;
-    const apkUrl = `https://github.com/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases/download/${versionTag}/app-release.apk`;
+    const apkAsset = releaseData.assets.find((asset: any) =>
+      asset.name.endsWith(".apk")
+    );
 
-    redirect(apkUrl);
+    if (!apkAsset) {
+      throw new Error("No .apk file found in the latest release assets.");
+    }
+
+    redirect(apkAsset.browser_download_url);
   } catch (error) {
     console.error("Failed to fetch release info or redirect:", error);
     throw error;
   }
 }
+
