@@ -3,9 +3,9 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*",
-        destination: "https://flowflix.pl/:path*",
-        permanent: true, // 301 redirect
+        source: "/",
+        destination: "https://flowflix.pl",
+        permanent: true,
       },
     ]
   },
