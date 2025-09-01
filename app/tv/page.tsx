@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 
 const GITHUB_REPO_OWNER = "FlowFlix";
 const GITHUB_REPO_NAME = "FlowFlix_Early_Alpha";
-const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/2.2/app-release.apk";
+const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/2.2/FlowFlix.apk";
 
 export const dynamic = "force-dynamic";
 
