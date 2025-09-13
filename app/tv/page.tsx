@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 interface GitHubReleaseAsset {
   name: string;
   size: number;
@@ -20,6 +22,8 @@ const GITHUB_REPO_OWNER = "FlowFlix";
 const GITHUB_REPO_NAME = "FlowFlix_Early_Alpha";
 const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/2.4/FlowFlix.apk";
 
+export const dynamic = "force-dynamic";
+
 async function fetchLatestRelease(): Promise<GitHubReleaseResponse | null> {
   try {
     const apiUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases/latest`;
@@ -29,9 +33,13 @@ async function fetchLatestRelease(): Promise<GitHubReleaseResponse | null> {
       Accept: "application/vnd.github.v3+json",
     };
 
+    if (process.env.GITHUB_TOKEN) {
+      headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+
     const res = await fetch(apiUrl, {
       headers,
-      cache: 'no-store', // Browser equivalent of Next.js revalidate
+      next: { revalidate: 600 },
     });
 
     console.log('📊 Status odpowiedzi API:', res.status, res.statusText);
@@ -49,7 +57,7 @@ async function fetchLatestRelease(): Promise<GitHubReleaseResponse | null> {
         
         const allReleasesRes = await fetch(allReleasesUrl, {
           headers,
-          cache: 'no-store',
+          next: { revalidate: 600 },
         });
 
         if (!allReleasesRes.ok) {
@@ -122,9 +130,10 @@ function findApkAsset(release: GitHubReleaseResponse): GitHubReleaseAsset | null
   }
 }
 
-async function performRedirect(): Promise<void> {
+// Next.js Page Component - MUSI być default export
+export default async function TVPage() {
   try {
-    console.log('🎯 Rozpoczynanie procesu przekierowania...');
+    console.log('🎯 Rozpoczynanie procesu przekierowania na stronie TV...');
     
     const release = await fetchLatestRelease();
     
@@ -132,7 +141,7 @@ async function performRedirect(): Promise<void> {
       // jeśli nie znaleziono żadnego wydania, przekieruj na fallback URL
       console.log('⚠️ Brak wydania - przekierowanie na fallback URL');
       console.log('🔗 Przekierowanie na fallback:', FALLBACK_APK_URL);
-      window.location.href = FALLBACK_APK_URL;
+      redirect(FALLBACK_APK_URL);
       return;
     }
 
@@ -140,46 +149,19 @@ async function performRedirect(): Promise<void> {
     
     if (apkAsset?.browser_download_url) {
       console.log('🚀 Przekierowanie na:', apkAsset.browser_download_url);
-      window.location.href = apkAsset.browser_download_url;
+      redirect(apkAsset.browser_download_url);
       return;
     } else {
       // jeśli nie znaleziono APK w wydaniu, użyj fallback URL
       console.log('⚠️ Nie znaleziono APK - przekierowanie na fallback URL');
       console.log('🔗 Przekierowanie na fallback:', FALLBACK_APK_URL);
-      window.location.href = FALLBACK_APK_URL;
+      redirect(FALLBACK_APK_URL);
       return;
     }
   } catch (error) {
-    console.error('❌ Error in performRedirect:', error);
+    console.error('❌ Error in TVPage:', error);
     // w przypadku błędu, przekieruj na fallback URL
     console.log('🔗 Przekierowanie na fallback URL:', FALLBACK_APK_URL);
-    window.location.href = FALLBACK_APK_URL;
+    redirect(FALLBACK_APK_URL);
   }
 }
-
-// Initialize redirect process
-function initializeRedirect(): void {
-  console.log('🚀 Android.html załadowany - rozpoczynanie przekierowania...');
-  
-  // Dodaj opóźnienie żeby DOM się załadował i logi były widoczne
-  console.log('⏳ Oczekiwanie na załadowanie DOM...');
-  
-  document.addEventListener('DOMContentLoaded', (): void => {
-    console.log('✅ DOM załadowany, rozpoczynanie przekierowania za 500ms...');
-    setTimeout(performRedirect, 500);
-  });
-
-  // Fallback - jeśli DOM już załadowany
-  if (document.readyState === 'loading') {
-    console.log('📄 DOM jeszcze się ładuje...');
-  } else {
-    console.log('📄 DOM już załadowany, rozpoczynanie przekierowania za 500ms...');
-    setTimeout(performRedirect, 500);
-  }
-}
-
-// Start the redirect process
-initializeRedirect();
-
-// Export functions for potential reuse
-export { fetchLatestRelease, findApkAsset, performRedirect, initializeRedirect };
