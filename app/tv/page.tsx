@@ -1,3 +1,4 @@
+// app/tv/page.tsx
 import { redirect } from "next/navigation";
 
 interface GitHubReleaseAsset {
@@ -20,7 +21,7 @@ interface GitHubReleaseResponse {
 
 const GITHUB_REPO_OWNER = "FlowFlix";
 const GITHUB_REPO_NAME = "FlowFlix_Early_Alpha";
-const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/2.5/FlowFlix.apk";
+const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases";
 
 export const dynamic = "force-dynamic";
 
@@ -138,30 +139,51 @@ export default async function TVPage() {
     const release = await fetchLatestRelease();
     
     if (!release) {
-      // jeśli nie znaleziono żadnego wydania, przekieruj na fallback URL
-      console.log('⚠️ Brak wydania - przekierowanie na fallback URL');
-      console.log('🔗 Przekierowanie na fallback:', FALLBACK_APK_URL);
-      redirect(FALLBACK_APK_URL);
+      // jeśli nie znaleziono żadnego wydania, znajdź działający fallback
+      console.log('⚠️ Brak wydania - szukanie działającego fallback URL');
+      const workingFallbackUrl = await findWorkingFallbackUrl();
+      console.log('🔗 Przekierowanie na fallback:', workingFallbackUrl);
+      redirect(workingFallbackUrl);
       return;
     }
 
     const apkAsset = findApkAsset(release);
     
     if (apkAsset?.browser_download_url) {
-      console.log('🚀 Przekierowanie na:', apkAsset.browser_download_url);
-      redirect(apkAsset.browser_download_url);
-      return;
-    } else {
-      // jeśli nie znaleziono APK w wydaniu, użyj fallback URL
-      console.log('⚠️ Nie znaleziono APK - przekierowanie na fallback URL');
-      console.log('🔗 Przekierowanie na fallback:', FALLBACK_APK_URL);
-      redirect(FALLBACK_APK_URL);
-      return;
+      // Sprawdź czy znaleziony URL działa
+      console.log('🔍 Sprawdzanie czy znaleziony APK jest dostępny...');
+      const isApkAvailable = await checkUrlAvailability(apkAsset.browser_download_url);
+      
+      if (isApkAvailable) {
+        console.log('🚀 Przekierowanie na:', apkAsset.browser_download_url);
+        redirect(apkAsset.browser_download_url);
+        return;
+      } else {
+        console.log('⚠️ Znaleziony APK nie jest dostępny, szukanie fallback...');
+      }
     }
+    
+    // jeśli nie znaleziono APK lub nie jest dostępny, znajdź działający fallback
+    console.log('⚠️ Nie znaleziono działającego APK - szukanie działającego fallback URL');
+    const workingFallbackUrl = await findWorkingFallbackUrl();
+    console.log('🔗 Przekierowanie na fallback:', workingFallbackUrl);
+    redirect(workingFallbackUrl);
+    return;
+    
   } catch (error) {
     console.error('❌ Error in TVPage:', error);
-    // w przypadku błędu, przekieruj na fallback URL
-    console.log('🔗 Przekierowanie na fallback URL:', FALLBACK_APK_URL);
-    redirect(FALLBACK_APK_URL);
+    // w przypadku błędu, znajdź działający fallback URL
+    console.log('🔄 Błąd - szukanie działającego fallback URL');
+    
+    try {
+      const workingFallbackUrl = await findWorkingFallbackUrl();
+      console.log('🔗 Przekierowanie na fallback URL:', workingFallbackUrl);
+      redirect(workingFallbackUrl);
+    } catch (fallbackError) {
+      console.error('❌ Nawet fallback się nie powiódł:', fallbackError);
+      // Ostateczny fallback na główny URL
+      console.log('🔗 Ostateczne przekierowanie na główny fallback:', PRIMARY_FALLBACK_URL);
+      redirect(PRIMARY_FALLBACK_URL);
+    }
   }
 }
