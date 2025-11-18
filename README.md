@@ -1,9 +1,10 @@
 [![Discord](https://dcbadge.limes.pink/api/server/VSUWb283RK)](https://discord.gg/VSUWb283RK)
 # FlowFlix – Klient Streamingowy
+# ! Projekt Oficjalie Zakończony !
 **FlowFlix** to nieoficjalna, wieloplatformowa aplikacja stworzona z wykorzystaniem Fluttera, umożliwiająca przeglądanie, wyszukiwanie i odtwarzanie filmów oraz seriali z różnych źródeł
 takich jak **filman.cc** **zaluknij.cc** czy **ekino-tv.pl** itd. w jednym, wygodnym miejscu. Aplikacja agreguje treści wideo i oferuje intuicyjny interfejs w stylu popularnych platform VOD.
 
-### Projekt: **[FlowFlix](https://github.com/FlowFlix/FlowFlix_Early_Alpha)**
+### Projekt: *nie mojego autorstwa*
 
 ## 📢Dołącz do naszej społeczności
 [Kliknij tutaj, aby dołączyć na Discord](https://discord.gg/VSUWb283RK)
