@@ -16,11 +16,11 @@ interface GitHubReleaseResponse {
   draft?: boolean;
   message?: string;
   documentation_url?: string;
-}
+} https://github.com/qJulianx/FlowFlixWeb/releases
 
-const GITHUB_REPO_OWNER = "FlowFlix";
-const GITHUB_REPO_NAME = "FlowFlix_Early_Alpha";
-const FALLBACK_APK_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases/download/2.4/FlowFlix.apk";
+const GITHUB_REPO_OWNER = "qJulianx";
+const GITHUB_REPO_NAME = "FlowFlixWeb";
+const FALLBACK_APK_URL = "https://github.com/qJulianx/FlowFlixWeb/releases/download/v2.501/app-release.v2.501.apk";
 
 export const dynamic = "force-dynamic";
 
