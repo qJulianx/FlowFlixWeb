@@ -16,7 +16,7 @@ interface GitHubReleaseResponse {
   draft?: boolean;
   message?: string;
   documentation_url?: string;
-} https://github.com/qJulianx/FlowFlixWeb/releases
+}
 
 const GITHUB_REPO_OWNER = "qJulianx";
 const GITHUB_REPO_NAME = "FlowFlixWeb";
