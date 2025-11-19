@@ -27,7 +27,7 @@ import {
 } from "lucide-react"
 import { getLatestReleaseChangelog, type ChangelogInfo } from "./actions"
 
-const GITHUB_RELEASES_URL = "https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
+const GITHUB_RELEASES_URL = "https://github.com/qJulianx/FlowFlixWeb/releases"
 
 export default function FlowflixDownloadPageClient() {
   const [changelogData, setChangelogData] = useState<ChangelogInfo | null>(null)
