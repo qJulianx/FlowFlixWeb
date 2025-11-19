@@ -358,7 +358,7 @@ export default function FlowflixDownloadPageClient() {
                 <Loader2 className="h-6 w-6 animate-spin text-purple-400" />
                 <span className="text-lg">Ładowanie informacji o zmianach...</span>
                  <a
-                    href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
+                    href="https://github.com/qJulianx/FlowFlixWeb/releases"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-pink-400 underline hover:underline font-semibold"
@@ -376,7 +376,7 @@ export default function FlowflixDownloadPageClient() {
                 <p className="text-slate-400">
                   Sprawdź najnowsze wydania bezpośrednio na{" "}
                   <a
-                    href="https://github.com/FlowFlix/FlowFlix_Early_Alpha/releases"
+                    href="https://github.com/qJulianx/FlowFlixWeb/releases"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-pink-400 hover:underline font-semibold"
