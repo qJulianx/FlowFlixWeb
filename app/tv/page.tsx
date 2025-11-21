@@ -20,7 +20,7 @@ interface GitHubReleaseResponse {
 
 const GITHUB_REPO_OWNER = "qJulianx";
 const GITHUB_REPO_NAME = "FlowFlixWeb";
-const FALLBACK_APK_URL = "https://github.com/qJulianx/FlowFlixWeb/releases/download/v2.501/app-release.v2.501.apk";
+const FALLBACK_APK_URL = "https://github.com/qJulianx/FlowFlixWeb/releases/download/v2.501/app-release.v2.510.apk";
 
 export const dynamic = "force-dynamic";
 
