@@ -37,11 +37,10 @@ export const metadata: Metadata = {
     locale: "pl_PL",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "FlowFlix - Twoje Filmy i Seriale Online",
     description: "Oglądaj filmy i seriale za darmo. Ponad 50,000 tytułów bez reklam z polskimi napisami.",
     creator: "@FlowFlix",
-    images: ["https://flowflix.vercel.app/logo2.png"],
   },
   appleWebApp: {
     capable: true,
