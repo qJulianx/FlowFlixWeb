@@ -9,7 +9,7 @@ export default function DiscordButton() {
   const [memberCount, setMemberCount] = useState<number>(391);
 
   useEffect(() => {
-    let controls: { stop: () => void, then: (resolve: () => void) => Promise<void> };
+    let controls: any;
 
     const fetchDiscordMembers = async () => {
       try {
@@ -27,7 +27,7 @@ export default function DiscordButton() {
                     ease: "circOut"
                 });
                 
-                await controls.then();
+                await controls.then(() => {});
 
                 controls = animate(targetCount - 15, targetCount, {
                     duration: 3,
