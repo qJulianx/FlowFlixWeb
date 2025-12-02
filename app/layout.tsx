@@ -56,8 +56,9 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "FlowFlix",
   },
-  other: {
-    "yandex-verification": "3752681036f00e34",
+  verification: {
+    google: "xsnKJrvWzLdfcR4zPXVQE-VaIDSAI6tlu6InzE0RZCM",
+    yandex: "3752681036f00e34",
   },
   icons: {
     icon: [
