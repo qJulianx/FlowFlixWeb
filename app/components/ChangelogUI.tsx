@@ -82,28 +82,28 @@ export default function ChangelogUI({ release, date }: ChangelogUIProps) {
                     <ReactMarkdown 
                         remarkPlugins={[remarkGfm]}
                         components={{
-                            p: ({node, ...props}) => (
-                                <motion.p 
-                                    initial={{ opacity: 0, y: 10 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4 }}
-                                    {...props} 
-                                />
-                            ),
-                            li: ({node, ...props}) => (
-                                <motion.li 
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4 }}
-                                    {...props} 
-                                />
-                            ),
-                            h1: ({node, ...props}) => <motion.h1 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
-                            h2: ({node, ...props}) => <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
-                            h3: ({node, ...props}) => <motion.h3 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
-                        }}
+    p: ({ node, ...props }: any) => (
+        <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            {...props}
+        />
+    ),
+    li: ({ node, ...props }: any) => (
+        <motion.li
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            {...props}
+        />
+    ),
+    h1: ({ node, ...props }: any) => <motion.h1 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
+    h2: ({ node, ...props }: any) => <motion.h2 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
+    h3: ({ node, ...props }: any) => <motion.h3 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} {...props} />,
+}}
                     >
                         {release.body}
                     </ReactMarkdown>
