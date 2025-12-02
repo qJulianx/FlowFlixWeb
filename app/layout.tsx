@@ -35,14 +35,6 @@ export const metadata: Metadata = {
     siteName: "FlowFlix",
     url: "https://flowflix.vercel.app/",
     locale: "pl_PL",
-    images: [
-      {
-        url: "https://flowflix.vercel.app/logo2.png",
-        width: 1200,
-        height: 630,
-        alt: "FlowFlix Logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
