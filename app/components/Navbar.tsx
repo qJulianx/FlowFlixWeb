@@ -96,7 +96,7 @@ export default function Navbar() {
                         <Link
                             key={item}
                             href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
-                            className="text-3xl font-bold text-zinc-400 hover:text-white transition-colors py-2 border-b border-white/5"
+                            className="text-3xl font-bold text-zinc-400 hover:text-white transition-colors py-2"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             {item === "Features" ? "Funkcje" : item === "Changelog" ? "Zmiany" : item}
