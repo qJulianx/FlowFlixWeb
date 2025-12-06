@@ -8,6 +8,17 @@ const GITHUB_REPO_OWNER = "qJulianx";
 const GITHUB_REPO_NAME = "FlowFlixWeb";
 const FALLBACK_MSI_URL = "https://github.com/qJulianx/FlowFlixWeb/releases";
 
+interface GithubAsset {
+  name: string;
+  browser_download_url: string;
+}
+
+interface GithubRelease {
+  prerelease: boolean;
+  draft: boolean;
+  assets: GithubAsset[];
+}
+
 export default function WindowsDownloadPage() {
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
@@ -17,7 +28,7 @@ export default function WindowsDownloadPage() {
     const startDownloadProcess = async () => {
       try {
         // 1. Fetch Latest Release
-        let releaseData;
+        let releaseData: GithubRelease | undefined;
         try {
           const res = await fetch(
             `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases/latest`
@@ -31,19 +42,21 @@ export default function WindowsDownloadPage() {
             `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases`
           );
           if (!resAll.ok) throw new Error("Failed to fetch releases");
-          const allReleases = await resAll.json();
+          const allReleases: GithubRelease[] = await resAll.json();
           
           if (!Array.isArray(allReleases) || allReleases.length === 0) {
             throw new Error("No releases found");
           }
           // Try to find stable, else take first
-          releaseData = allReleases.find((r: any) => !r.prerelease && !r.draft) || allReleases[0];
+          releaseData = allReleases.find((r) => !r.prerelease && !r.draft) || allReleases[0];
         }
 
+        if (!releaseData) throw new Error("Could not determine release data");
+
         // 2. Find MSI asset
-        if (!releaseData?.assets) throw new Error("Release has no assets");
+        if (!releaseData.assets) throw new Error("Release has no assets");
         
-        const msiAsset = releaseData.assets.find((asset: any) => 
+        const msiAsset = releaseData.assets.find((asset) => 
           asset.name && asset.name.toLowerCase().endsWith('.msi')
         );
 
@@ -106,7 +119,7 @@ export default function WindowsDownloadPage() {
               Jeśli pobieranie nie ruszyło automatycznie, kliknij przycisk poniżej.
             </p>
             <a 
-              href={downloadUrl!}
+              href={downloadUrl ?? "#"}
               className="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
             >
               Pobierz ręcznie
