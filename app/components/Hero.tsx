@@ -52,7 +52,7 @@ export default function Hero() {
                    <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-zinc-200 text-black rounded-2xl font-bold text-base lg:text-lg shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)] transition-all"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-zinc-900/80 text-white border border-white/10 rounded-2xl font-bold text-base lg:text-lg backdrop-blur-md hover:bg-zinc-800 transition-all shadow-[0_0_20px_-5px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]"
                    >
                     <Monitor size={20} className="lg:w-6 lg:h-6" />
                     Pobierz na Windows
