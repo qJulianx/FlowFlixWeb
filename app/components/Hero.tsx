@@ -48,15 +48,18 @@ export default function Hero() {
             </Link>
 
             <div className="relative group w-full sm:w-auto">
-                <button
-                disabled
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-white/5 text-zinc-500 rounded-2xl font-medium text-base lg:text-lg border border-white/5 cursor-not-allowed"
-                >
-                <Monitor size={20} className="lg:w-6 lg:h-6" />
-                Pobierz na Windows
-                </button>
-                <span className="absolute -top-2 lg:-top-3 right-2 bg-zinc-800 text-zinc-400 text-[10px] px-2 py-0.5 rounded-full border border-white/5">
-                    Wkrótce
+                <Link href="/windows" className="w-full sm:w-auto">
+                   <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-zinc-200 text-black rounded-2xl font-bold text-base lg:text-lg shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)] transition-all"
+                   >
+                    <Monitor size={20} className="lg:w-6 lg:h-6" />
+                    Pobierz na Windows
+                   </motion.button>
+                </Link>
+                <span className="absolute -top-2 lg:-top-3 right-2 bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded-full border border-white/5 pointer-events-none">
+                    Nowe
                 </span>
             </div>
           </div>
